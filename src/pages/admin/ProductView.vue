@@ -1,9 +1,87 @@
 <template lang="">
-  <div>Product view</div>
+  <div>
+    <h1>Authors List</h1>
+    <table class="p-list">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Total Books</th>
+      </tr>
+      {{
+        console.log(authorsDataList[0])
+      }}
+
+      <tr v-for="(item, index) in authorsDataList" :key="index">
+        <td>{{ item.name }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.totalBooks }}</td>
+      </tr>
+    </table>
+  </div>
 </template>
-<script>
+<script lang="ts">
 export default {
-  name: 'product_view'
+  name: 'product_view',
+  data() {
+    const authorsList = [
+      {
+        id: 1,
+        name: 'Mony Sing',
+        address: 'Karachi, Pakistan',
+        totalBooks: 50
+      },
+      {
+        id: 2,
+        name: 'Sony Sing',
+        address: 'Kashmir, India',
+        totalBooks: 30
+      },
+      {
+        id: 3,
+        name: 'Angelina',
+        address: 'UK',
+        totalBooks: 10
+      },
+      {
+        id: 4,
+        name: 'Sunny Sing',
+        address: 'Karachi, Pakistan',
+        totalBooks: 10
+      }
+    ]
+    return {
+      authorsDataList: authorsList
+    }
+  }
 }
 </script>
-<style lang=""></style>
+
+<style>
+.p-list {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.p-list td,
+.p-list th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.p-lists tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.p-list tr:hover {
+  background-color: #ddd;
+}
+
+.p-list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #96abf9;
+  color: white;
+}
+</style>

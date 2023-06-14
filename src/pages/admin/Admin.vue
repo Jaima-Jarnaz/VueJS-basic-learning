@@ -3,30 +3,39 @@
   <Navbar />
 
   <section class="p-section">
-    <h1 class="p-section__heading">Add new product</h1>
-    <div class="p-section__status" :style="{ backgroundColor: backgroundColor }" v-if="status">
-      {{ status }}
-    </div>
-    <div class="p-section__form">
-      <div class="container">
-        <form action="">
-          <label for="fname">Author Name</label>
-          <input type="text" id="fname" name="name" placeholder="Author name.." />
+    <div class="p-section__contents">
+      <h1 class="p-section__heading">Add new product</h1>
+      <div class="p-section__status" :style="{ backgroundColor: backgroundColor }" v-if="status">
+        {{ status }}
+      </div>
+      <div class="p-section__form">
+        <div class="container">
+          <form action="">
+            <label for="fname">Author Name</label>
+            <input
+              type="text"
+              v-model="authorName"
+              id="name"
+              name="name"
+              placeholder="Author name.."
+            />
 
-          <label for="lname">Author Address</label>
-          <input type="text" id="lname" name="address" placeholder="Author address.." />
+            <label for="lname">Author Address</label>
+            <input type="text" id="name" name="address" placeholder="Author address.." />
 
-          <label for="country">Country</label>
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select>
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
 
-          <input type="submit" value="Submit" />
-        </form>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     </div>
+    <ProductView />
   </section>
 
   <section class="p-content">
@@ -42,6 +51,7 @@
 
 <script>
 import Navbar from '../../components/organisms/navbar/Navbar.vue'
+import ProductView from '../../pages/admin/ProductView.vue'
 import { ref } from 'vue'
 
 let value = 12
@@ -51,39 +61,14 @@ let statusClass = status === 'new author' ? 'green' : '#f1ad36'
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'admin',
-  components: { Navbar },
+  components: { Navbar, ProductView },
   data() {
-    const authors = [
-      {
-        id: 1,
-        name: 'Kabir Sing',
-        address: 'Karachi, Pakistan',
-        totalBooks: 50
-      },
-      {
-        id: 2,
-        name: 'Karim Sing',
-        address: 'Kashmir, India',
-        totalBooks: 30
-      },
-      {
-        id: 1,
-        name: 'Angelina',
-        address: 'UK',
-        totalBooks: 10
-      },
-      {
-        id: 1,
-        name: 'Sunny Sing',
-        address: 'Karachi, Pakistan',
-        totalBooks: 10
-      }
-    ]
+    const authorName = ''
     return {
       status: status,
       backgroundColor: statusClass, //attribute binding
       contents: 'Focus on your goal',
-      authors
+      authorName
     }
   },
 
@@ -105,6 +90,10 @@ export default {
 <style>
 .p-section {
   padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
 }
 .p-section__form {
   padding: 12px;
@@ -127,7 +116,7 @@ textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type='submit'] {
-  background-color: #04aa6d;
+  background-color: #96abf9;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -137,7 +126,7 @@ input[type='submit'] {
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type='submit']:hover {
-  background-color: #45a049;
+  background-color: #717da5;
 }
 
 /* Add a background color and some padding around the form */
@@ -184,7 +173,7 @@ input[type='submit']:hover {
   padding: 12px;
   font-size: 15px;
   color: white;
-  background-color: blueviolet;
+  background-color: #96abf9;
   border-radius: 8px;
   border: none;
   cursor: pointer;
