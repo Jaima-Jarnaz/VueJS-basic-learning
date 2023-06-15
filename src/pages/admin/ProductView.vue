@@ -6,6 +6,7 @@
         <th>Name</th>
         <th>Address</th>
         <th>Total Books</th>
+        <th>Publication</th>
       </tr>
       {{
         console.log(authorsDataList[0])
@@ -15,6 +16,7 @@
         <td>{{ item.name }}</td>
         <td>{{ item.address }}</td>
         <td>{{ item.totalBooks }}</td>
+        <td>{{ item.publication }}</td>
       </tr>
     </table>
   </div>
@@ -28,25 +30,29 @@ export default {
         id: 1,
         name: 'Mony Sing',
         address: 'Karachi, Pakistan',
-        totalBooks: 50
+        totalBooks: 50,
+        publication: 'Marina publications'
       },
       {
         id: 2,
         name: 'Sony Sing',
         address: 'Kashmir, India',
-        totalBooks: 30
+        totalBooks: 30,
+        publication: 'Utahan'
       },
       {
         id: 3,
         name: 'Angelina',
         address: 'UK',
-        totalBooks: 10
+        totalBooks: 10,
+        publication: 'Marina publications'
       },
       {
         id: 4,
         name: 'Sunny Sing',
         address: 'Karachi, Pakistan',
-        totalBooks: 10
+        totalBooks: 10,
+        publication: 'Utahan'
       }
     ]
     return {

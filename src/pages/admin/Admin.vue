@@ -14,23 +14,37 @@
             <label for="fname">Author Name</label>
             <input
               type="text"
-              v-model="authorName"
+              v-model="authorData.name"
               id="name"
               name="name"
               placeholder="Author name.."
             />
 
             <label for="lname">Author Address</label>
-            <input type="text" id="name" name="address" placeholder="Author address.." />
+            <input
+              type="text"
+              id="address"
+              v-model="authorData.address"
+              name="address"
+              placeholder="Author address.."
+            />
 
-            <label for="country">Country</label>
-            <select id="country" name="country">
-              <option value="australia">Australia</option>
-              <option value="canada">Canada</option>
-              <option value="usa">USA</option>
+            <label for="publication">Publication</label>
+            <select id="publication" name="publication" v-model="authorData.publication">
+              <option value="Marina publications">Marina publications</option>
+              <option value="Utahan">Utahan</option>
             </select>
 
-            <input type="submit" value="Submit" />
+            <label for="lname">Total Books</label>
+            <input
+              type="text"
+              id="address"
+              v-model="authorData.totalBooks"
+              name="address"
+              placeholder="Total Books"
+            />
+
+            <input type="submit" value="Submit" @click="saveItem" />
           </form>
         </div>
       </div>
@@ -63,12 +77,17 @@ export default {
   name: 'admin',
   components: { Navbar, ProductView },
   data() {
-    const authorName = ''
+    const authorData = {
+      name: '',
+      address: '',
+      totalBooks: '',
+      publication: ''
+    }
     return {
       status: status,
       backgroundColor: statusClass, //attribute binding
       contents: 'Focus on your goal',
-      authorName
+      authorData
     }
   },
 
@@ -83,6 +102,16 @@ export default {
     return {
       count,
       increment
+    }
+  },
+  methods: {
+    saveItem() {
+      this.authorsDataList.push({
+        name: authorData.name,
+        address: authorData.address,
+        totalBooks: authorData.totalBooks,
+        publication: authorData.publication
+      })
     }
   }
 }
