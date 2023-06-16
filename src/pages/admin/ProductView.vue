@@ -1,6 +1,7 @@
 <template lang="">
   <div>
     <h1>Authors List</h1>
+    <p v-if="authorsDataList.length === 0">There is no data available</p>
     <table class="p-list">
       <tr>
         <th>Name</th>
@@ -8,9 +9,6 @@
         <th>Total Books</th>
         <th>Publication</th>
       </tr>
-      {{
-        console.log(authorsDataList[0])
-      }}
 
       <tr v-for="(item, index) in authorsDataList" :key="index">
         <td>{{ item.name }}</td>
