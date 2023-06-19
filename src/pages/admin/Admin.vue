@@ -4,7 +4,7 @@
 
   <section class="p-section">
     <div class="p-section__contents">
-      <h1 class="p-section__heading">Add new product</h1>
+      <h1 class="p-section__heading">Add new author</h1>
       <div class="p-section__status" :style="{ backgroundColor: backgroundColor }" v-if="status">
         {{ status }}
       </div>
@@ -76,6 +76,7 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'admin',
   components: { Navbar, ProductView },
+  //options api
   data() {
     const authorData = {
       name: '',
@@ -90,7 +91,17 @@ export default {
       authorData
     }
   },
-
+  methods: {
+    saveItem() {
+      this.authorsDataList.push({
+        name: authorData.name,
+        address: authorData.address,
+        totalBooks: authorData.totalBooks,
+        publication: authorData.publication
+      })
+    }
+  },
+  //composition api
   setup() {
     const count = ref(0)
 
@@ -102,16 +113,6 @@ export default {
     return {
       count,
       increment
-    }
-  },
-  methods: {
-    saveItem() {
-      this.authorsDataList.push({
-        name: authorData.name,
-        address: authorData.address,
-        totalBooks: authorData.totalBooks,
-        publication: authorData.publication
-      })
     }
   }
 }

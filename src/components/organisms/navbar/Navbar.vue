@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .o-navbar {
-  background-color: #333;
+  background-color: #96abf9;
   padding: 20px;
 }
 .o-navbar__menu {
@@ -43,7 +43,7 @@ export default {
 }
 
 .link.active {
-  background-color: #6c931e;
+  background-color: #99b5e9;
   color: white;
 }
 </style>
