@@ -1,5 +1,5 @@
 <template lang="">
-  <h2>Lesson for Reactivity</h2>
+  <h2 class="heading">Lesson for Reactivity</h2>
   <h3>Count {{ count }} by {{ person.name }}</h3>
   <button class="button" @click="count++">Click me</button>
 </template>
@@ -36,5 +36,8 @@ export default {
   border: none;
   cursor: pointer;
   margin: 10px;
+}
+.heading {
+  color: #04aa6d;
 }
 </style>

@@ -10,7 +10,7 @@
       </div>
       <div class="p-section__form">
         <div class="container">
-          <form action="">
+          <form action="" @submit.prevent="saveItem">
             <label for="fname">Author Name</label>
             <input
               type="text"
@@ -44,7 +44,7 @@
               placeholder="Total Books"
             />
 
-            <input type="submit" value="Submit" @click="saveItem" />
+            <input type="submit" value="Submit" />
           </form>
         </div>
       </div>
