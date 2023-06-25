@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <p>Post author name : {{ dataName }}</p>
+  <h1 class="bg-blue-500 text-white p-4">Hello world!</h1>
   <h2>All post lists</h2>
   <table id="posts">
     <thead>

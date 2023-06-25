@@ -4,6 +4,7 @@ import ProductCreate from '../pages/admin/ProductCreate.vue'
 import ProductView from '../pages/admin/ProductView.vue'
 import Admin from '../pages/admin/Admin.vue'
 import Basics from '../basics/index.vue'
+import About from '../pages/about/About.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,11 @@ const router = createRouter({
       path: '/basics',
       name: 'basics',
       component: Basics
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     },
     {
       path: '/admin',
