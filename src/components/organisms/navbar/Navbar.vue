@@ -4,7 +4,7 @@
       <li><router-link class="link" :to="{ name: 'index' }">Home</router-link></li>
       <li><router-link class="link" :to="{ name: 'product_create' }">Create</router-link></li>
       <li><router-link class="link" :to="{ name: 'product_view' }">View</router-link></li>
-      <li><router-link class="link" :to="{ name: 'product_create' }">About</router-link></li>
+      <li><router-link class="link" :to="{ name: 'about' }">About</router-link></li>
     </ul>
   </nav>
 </template>
